@@ -1,0 +1,151 @@
+/* ===== VARIABLES DE COLOR Y MEDIDAS (MODO OSCURO) ===== */
+:root {
+  --fondo: #121212;             /* Fondo general oscuro */
+  --tarjeta: #1e1e1e;           /* Fondo de los paneles (tarjetas) */
+  --texto: #f3f4f6;             /* Texto principal claro */
+  --texto-suave: #9ca3af;       /* Texto secundario gris */
+  --borde: #2d2d2d;             /* Bordes sutiles oscuros */
+  --acento: #0d9488;            /* Verde azulado para botones principales */
+  --acento-hover: #0f766e;      /* Tono más oscuro al pasar el mouse */
+  --radio: 12px;
+}
+
+/* ===== REINICIO BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+/* ===== CONTENEDOR GENERAL ===== */
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ===== ENCABEZADO ===== */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.encabezado h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.insignia {
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+}
+
+/* ===== DISTRIBUCIÓN EN COLUMNAS ===== */
+.contenido {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ===== PANELES (TARJETAS) ===== */
+.panel {
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+}
+
+.panel h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ===== FILAS DE PRODUCTOS ===== */
+.fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.fila:last-of-type {
+  border-bottom: none;
+}
+
+.fila-nombre {
+  font-weight: 500;
+}
+
+.fila-detalle {
+  font-size: 0.875rem;
+  color: var(--texto-suave);
+}
+
+/* ===== BOTONES ===== */
+.btn {
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primario {
+  background-color: var(--acento);
+  color: #ffffff;
+  border: 1px solid var(--acento);
+}
+
+.btn-primario:hover {
+  background-color: var(--acento-hover);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--texto);
+  border: 1px solid var(--borde);
+}
+
+.btn-secundario:hover {
+  border-color: var(--texto-suave);
+}
+
+.btn-bloque {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* ===== TOTAL DEL CARRITO ===== */
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--texto);
+  font-size: 1.1rem;
+}
+
+/* ===== MENSAJE DE CARRITO VACÍO ===== */
+.vacio {
+  color: var(--texto-suave);
+  text-align: center;
+  padding: 2rem 0;
+}
